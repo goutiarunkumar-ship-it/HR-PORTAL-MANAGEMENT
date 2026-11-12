@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PeopleDesk | Employee Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-view="employee">
+  <div class="app">
+    <aside class="sidebar">
+      <a class="brand" href="employee.html"><span class="brand-mark">P</span> PeopleDesk</a>
+      <div class="nav-label">EMPLOYEE WORKSPACE</div>
+      <nav class="nav" id="main-nav" aria-label="Employee navigation"></nav>
+      <div class="sidebar-bottom">PeopleDesk Employee Portal<br>Demo data is saved in this browser.</div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div class="crumb"><a href="index.html">HR Portal</a> <span>/</span> <strong id="current-page">My Dashboard</strong></div>
+        <div class="profile-controls">
+          <label class="sr-only" for="role-select">View dashboard as</label>
+          <select class="field role-select" id="role-select" aria-hidden="true" tabindex="-1" hidden>
+            <option value="employee">Employee dashboard</option>
+          </select>
+          <label class="sr-only" for="employee-select">Employee profile</label>
+          <select class="field employee-select" id="employee-select" aria-label="Select demo employee"></select>
+        </div>
+      </header>
+      <section class="content" id="page-content" aria-live="polite"></section>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/hr-dashboard.js"></script>
+  <script src="js/employee-dashboard.js"></script>
+  <script src="js/people.js"></script>
+  <script src="js/workflows.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

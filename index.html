@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PeopleDesk | HR Management Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-view="hr">
+  <div class="app">
+    <aside class="sidebar">
+      <a class="brand" href="#" data-page="home"><span class="brand-mark">P</span> PeopleDesk</a>
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="nav" id="main-nav" aria-label="Main navigation"></nav>
+      <div class="sidebar-bottom">PeopleDesk HR Portal<br>Demo data is saved in this browser.</div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div class="crumb">Workspace <span>/</span> <strong id="current-page">Dashboard</strong></div>
+        <div class="profile-controls">
+          <label class="sr-only" for="role-select">View dashboard as</label>
+          <select class="field role-select" id="role-select">
+            <option value="hr">HR dashboard</option>
+            <option value="employee">Employee dashboard</option>
+          </select>
+          <label class="sr-only" for="employee-select">Employee profile</label>
+          <select class="field employee-select" id="employee-select" aria-label="Employee profile"></select>
+          <a class="btn secondary employee-portal-link" href="employee.html">Employee portal ↗</a>
+        </div>
+      </header>
+      <section class="content" id="page-content" aria-live="polite"></section>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <dialog class="modal" id="employee-dialog">
+    <form id="employee-form">
+      <h2 id="employee-form-title">Add employee</h2>
+      <p>Enter the employee details below.</p>
+      <input type="hidden" name="id">
+      <div class="form-grid">
+        <label class="form-group">Full name<input class="field" name="name" required></label>
+        <label class="form-group">Email address<input class="field" name="email" type="email" required></label>
+        <label class="form-group">Job title<input class="field" name="role" required></label>
+        <label class="form-group">Department
+          <select class="field" name="department" required>
+            <option>Engineering</option><option>Design</option><option>Human Resources</option>
+            <option>Marketing</option><option>Analytics</option><option>Finance</option><option>Sales</option>
+          </select>
+        </label>
+        <label class="form-group full">Employment status
+          <select class="field" name="status"><option>Active</option><option>On Leave</option></select>
+        </label>
+      </div>
+      <div class="modal-actions">
+        <button class="btn secondary" type="button" data-action="close-employee-dialog">Cancel</button>
+        <button class="btn" type="submit">Save employee</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/hr-dashboard.js"></script>
+  <script src="js/employee-dashboard.js"></script>
+  <script src="js/people.js"></script>
+  <script src="js/workflows.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
